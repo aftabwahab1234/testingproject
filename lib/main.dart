@@ -50,6 +50,10 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+
+  SnackBar snackBar = const SnackBar(content: Text('test'));
+
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -63,6 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
